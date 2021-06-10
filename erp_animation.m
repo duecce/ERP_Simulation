@@ -30,8 +30,6 @@ for i=1:epochs
     else
         signal(i, :) = random_signal; % unfiltered
     end
-    mean_value = (max(signal(i, :)) - min(signal(i, :))) / 2; % calcolo il valore mediano del segnale
-    signal(i, :) = signal(i, :) - mean_value; % lo sottraggo al segnale
     signal(i, :) = signal(i, :) + common_erp; % ci sommo il segnale ERP che è in comune tra tutti i segnali
     if ( mod(i, 1) == 0 )
         subplot(3, 1, 2);
